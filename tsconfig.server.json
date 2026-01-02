@@ -1,16 +1,17 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "esModuleInterop": true,
-    "strict": true,
+    "strict": false,
     "skipLibCheck": true,
     "outDir": "./dist-server",
-    "rootDir": "./server",
+    "rootDir": ".",
     "declaration": false,
-    "sourceMap": false
+    "sourceMap": false,
+    "resolveJsonModule": true
   },
-  "include": ["server/**/*"],
+  "include": ["server/**/*", "src/db/**/*"],
   "exclude": ["node_modules"]
 }
