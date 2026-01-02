@@ -9,9 +9,9 @@ COPY tsconfig.server.json ./
 # Install dependencies
 RUN npm ci --omit=dev && npm install typescript tsx
 
-# Copy server and db folders
+# Copy server folder and db schema
 COPY server ./server
-COPY db ./db
+COPY src/db ./src/db
 
 # Build TypeScript
 RUN npx tsc -p tsconfig.server.json
