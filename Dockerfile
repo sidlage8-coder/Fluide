@@ -6,15 +6,15 @@ WORKDIR /app
 COPY package*.json ./
 COPY tsconfig.server.json ./
 
-# Install dependencies
-RUN npm ci --omit=dev && npm install typescript tsx
+# Install ALL dependencies (including devDependencies for TypeScript build)
+RUN npm ci
 
 # Copy server folder and db schema
 COPY server ./server
 COPY src/db ./src/db
 
 # Build TypeScript
-RUN npx tsc -p tsconfig.server.json
+RUN ./node_modules/.bin/tsc -p tsconfig.server.json
 
 # Expose port
 EXPOSE 3001
