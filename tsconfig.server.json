@@ -12,6 +12,6 @@
     "sourceMap": false,
     "resolveJsonModule": true
   },
-  "include": ["server/**/*", "src/db/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["server/**/*", "src/db/schema.ts"],
+  "exclude": ["node_modules", "src/db/index.ts"]
 }
